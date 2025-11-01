@@ -5,12 +5,11 @@ const nextConfig = {
   trailingSlash: true,
   assetPrefix: '.',
   
-  // ✅ تجاهل كافة أنواع الأخطاء أثناء البناء
   typescript: {
-    ignoreBuildErrors: true, // تجاهل أخطاء TypeScript
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true, // تجاهل تحذيرات ESLint
+    ignoreDuringBuilds: true,
   },
   
   images: {
@@ -23,30 +22,20 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "**", // ✅ تقبل جميع الدومينات
+        hostname: "**",
       },
     ],
-    unoptimized: true, // ✅ تعطيل تحسين الصور لتجنب الأخطاء
+    unoptimized: true,
   },
   
-  experimental: {
-    serverActions: {
-      allowedOrigins: ["*"],
-    },
-  },
+  // ❌ أزل هذا القسم بالكامل
+  // experimental: {
+  //   serverActions: {
+  //     allowedOrigins: ["*"],
+  //   },
+  // },
   
   staticPageGenerationTimeout: 300,
-  
-  // ✅ إضافة webpack config إضافي لتجاهل المزيد من التحذيرات
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // تجاهل تحذيرات معينة
-    config.ignoreWarnings = [
-      { module: /node_modules/ },
-      { message: /Critical dependency/ },
-    ];
-    
-    return config;
-  },
 };
 
 module.exports = nextConfig;

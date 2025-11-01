@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import MainLayout from "../../src/components/layout/MainLayout";
 import { NoSsr } from "@mui/material";
 import { useRouter } from "next/router";
-import { useGetCategories } from "../../src/api-manage/hooks/react-query/categories-details/useCategoriesDetails";
+import { useGetCategories } from "../../src/api-manage/hooks/react-query/all-category/all-categorys";
 import useGetCategoriesForStore from "../../src/api-manage/hooks/react-query/categories-details/useCategoriesDetailsForStore";
 import {
   CustomPaperBigCard,
